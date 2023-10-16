@@ -1,4 +1,4 @@
-package de.neuefische.cgnjava233springdata.model;
+package de.neuefische.cgnjava233springdata.car;
 
 public record Car(
 		String id,

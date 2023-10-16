@@ -1,7 +1,5 @@
-package de.neuefische.cgnjava233springdata.controller;
+package de.neuefische.cgnjava233springdata.car;
 
-import de.neuefische.cgnjava233springdata.model.Car;
-import de.neuefische.cgnjava233springdata.service.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +27,7 @@ public class CarController {
 	}
 
 	@PostMapping
-	public Car addCar(@RequestBody Car car){
+	public Car addCar(@RequestBody NewCar car){
 		return carService.addCar(car);
 	}
 
