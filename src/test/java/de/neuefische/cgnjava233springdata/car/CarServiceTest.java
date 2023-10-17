@@ -53,4 +53,20 @@ class CarServiceTest {
 		verify(carRepository).findById(expected.id());
 		assertEquals(expected, actual);
 	}
+
+	@Test
+	void getCarByBrand() {
+		// GIVEN
+		List<Car> expected = List.of(
+				new Car("1", "test", "test"),
+				new Car("2", "test2", "test2")
+		);
+		// WHEN
+		when(carRepository.findCarByBrand(expected.get(0).brand())).thenReturn(Optional.of(expected.get(0)));
+		Car actual = carService.getCarByBrand(expected.get(0).brand());
+		// THEN
+		verify(carRepository).findCarByBrand(expected.get(0).brand());
+		assertEquals(expected.get(0), actual);
+	}
+
 }
